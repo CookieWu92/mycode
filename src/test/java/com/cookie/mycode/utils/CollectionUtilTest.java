@@ -22,8 +22,10 @@ public class CollectionUtilTest {
         list.add(new Person("ccc", 20, "女", false));
         list.add(new Person("ddd", 21, "男", true));
         list.add(new Person("eee", 22, "男", true));
-        List<List<Person>> result = CollectionUtil.partition1(list, 2);
-        System.out.println(result);
+        List<List<Person>> result1 = CollectionUtil.partition1(list, 2);
+        List<List<Person>> result2 = CollectionUtil.partition2(list, 4);
+        System.out.println(result1);
+        System.out.println(result2);
     }
 
 }
