@@ -64,6 +64,55 @@ public class FileEditer {
         }
     }
 
+    /**
+     * 剪切文件夹：使用 commons-io包的工具类
+     * @param srcDir
+     * @param desDir
+     * @throws IOException
+     */
+    public static void cutDirUtil(File srcDir, File desDir) throws IOException {
+        FileUtils.moveDirectory(srcDir,desDir);//底层先复制，再删除
+    }
+
+    /**
+     * 剪切文件夹：自己递归实现
+     * @param srcDir
+     * @param desDir
+     * @throws IOException
+     */
+    public static void cutDir(File srcDir, File desDir) throws IOException {
+        if (!desDir.exists()) {
+            desDir.mkdir();//删除源文件夹
+        }
+        File newDir = new File(desDir, srcDir.getName());
+        newDir.mkdir();
+
+        File[] files = srcDir.listFiles();
+        if (files == null || files.length == 0) {
+            srcDir.delete();
+            return;
+        }
+        for (File file : files) {
+            if (file.isDirectory()) {
+                cutDir(file, newDir);
+            } else {
+                FileInputStream fis = new FileInputStream(file);
+                FileOutputStream fos = new FileOutputStream(new File(newDir, file.getName()));
+                byte[] buffer = new byte[1024];
+                int len = 0;
+                while ((len = fis.read(buffer)) != -1) {
+                    fos.write(buffer, 0, len);
+                }
+                fis.close();
+                fos.close();
+                //读写完后，删除源文件
+                file.delete();
+            }
+        }
+        srcDir.delete();
+    }
+
+
 
 
 
