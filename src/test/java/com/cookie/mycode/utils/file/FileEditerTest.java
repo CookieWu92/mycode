@@ -13,12 +13,16 @@ import java.io.IOException;
  */
 public class FileEditerTest {
 
+    String srcPath = FileConstant.folderPath1;
+    String dirPath = "D:\\临时";
     @Test
-    public void copyDirUtil() throws IOException {
-        String srcPath = FileConstant.folderPath1;
-        String dirPath = "D:\\测试";
+    public void copy() throws IOException {
 //        FileEditer.copyDirUtil(new File(srcPath), new File(dirPath));
         FileEditer.copyDir(new File(srcPath), new File(dirPath));
+    }
+    @Test
+    public void cut() throws IOException {
+        FileEditer.cutDir(new File(srcPath), new File(dirPath));
     }
 
 }
