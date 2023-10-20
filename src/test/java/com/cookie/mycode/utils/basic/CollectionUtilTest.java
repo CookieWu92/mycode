@@ -1,6 +1,7 @@
-package com.cookie.mycode.utils;
+package com.cookie.mycode.utils.basic;
 
 import com.cookie.mycode.domain.Person;
+import com.cookie.mycode.utils.basic.CollectionUtil;
 import org.junit.Test;
 
 import java.util.ArrayList;

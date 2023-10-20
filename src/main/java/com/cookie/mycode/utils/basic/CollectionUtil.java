@@ -1,4 +1,4 @@
-package com.cookie.mycode.utils;
+package com.cookie.mycode.utils.basic;
 
 import org.springframework.util.CollectionUtils;
 

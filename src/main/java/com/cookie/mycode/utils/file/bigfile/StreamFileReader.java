@@ -1,4 +1,4 @@
-package com.cookie.mycode.utils;
+package com.cookie.mycode.utils.file.bigfile;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
