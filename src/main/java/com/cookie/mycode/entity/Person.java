@@ -1,4 +1,4 @@
-package com.cookie.mycode.domain;
+package com.cookie.mycode.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
