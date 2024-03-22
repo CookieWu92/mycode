@@ -9,5 +9,5 @@ import org.springframework.stereotype.Service;
  * @Version: v1.0
  */
 public interface TestService {
-    public Integer negate(Integer src);
+    Integer negate(Integer src);
 }
